@@ -3,12 +3,15 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import re
 
+#This script will SSH into specified device with the assigned parameters and copy the running configuration
+#into a folder located in the root directory of where this file was written, can be paired with windows task scheduler to backup everyday
+
 
 ipAddr = input("Enter IP: ")
 usr = input("Enter username: ")
 pwd = input("Enter password: ")
 pwd1 = input("Enter secret: ")
-test = "show version"
+test = "show run"
 device = ConnectHandler(device_type='cisco_ios', ip=ipAddr, username=usr, password=pwd, secret=pwd1)
 name_of_device = device.find_prompt()
 print(device.find_prompt())  # This is useful to verify our ssh connection by checking the prompt of the device
