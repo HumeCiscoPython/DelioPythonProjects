@@ -4,7 +4,7 @@ from netmiko import ConnectHandler
 import re
 
 #This script will SSH into specified device with the assigned parameters and copy the running configuration
-#into a folder located in the root directory of where this file was written, can be paired with windows task scheduler to backup everyday
+#into a folder located in the root directory of where this file was written, This requires human intervention
 
 
 ipAddr = input("Enter IP: ")
